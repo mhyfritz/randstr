@@ -1,0 +1,13 @@
+{
+  "ascii_lowercase": "abcdefghijklmnopqrstuvwxyz",
+  "ascii_uppercase": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+  "digits": "0123456789",
+  "hexdigits": "0123456789abcdefABCDEF",
+  "octdigits": "01234567",
+  "punctuation": "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~",
+  "bindigits": "01",
+  "dna": "ACGT",
+  "dna_ambiguous": "ACGTN",
+  "protein": "ACDEFGHIKLMNPQRSTVWY",
+  "protein_ambiguous": "ACDEFGHIKLMNPQRSTVWYBZJX"
+}
