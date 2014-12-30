@@ -1,17 +1,29 @@
 #! /usr/bin/env python
 
 import json
+from itertools import repeat
 import click
+
+try:
+    from os import urandom
+
+    def randchar(alpha):
+        b = urandom(1)
+        alpha_size = len(alpha)
+        try:
+            return alpha[ord(b) % alpha_size]
+        # with Python 3, `b` is byte
+        except TypeError:
+            return alpha[b % alpha_size]
+except NotImplementedError:
+    from random import choice
+
+    def randchar(alpha):
+        return choice(alpha)
 
 
 def randstr(alpha, length):
-    try:
-        import os
-        alpha_size = len(alpha)
-        return ''.join(alpha[ord(b) % alpha_size] for b in os.urandom(length))
-    except NotImplementedError:
-        import random
-        return ''.join(random.choice(alpha) for _ in length)
+    return ''.join(randchar(alpha) for _ in repeat(1, length))
 
 
 @click.command()
